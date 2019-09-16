@@ -5,9 +5,9 @@ A test to work with VIM editor
 '''
 
 def loadData(file):
-    #Home File Location: "E:\\Documents\\Scripts\\Python Mega Course\\Application 1\\%s" % file
+    #Home File Location: "E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 1\\%s" % file
     #Work File Location: "U:\\Documents\\GitCode\\UdemyPython\\Application 1\\%s" % file
-    return json.load(open("U:\\Documents\\GitCode\\UdemyPython\\Application 1\\%s" % file))
+    return json.load(open("E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 1\\%s" % file))
 
 def getDefinition(dictionary, word):
     return dictionary[word]
