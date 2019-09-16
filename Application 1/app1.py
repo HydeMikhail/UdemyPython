@@ -1,5 +1,9 @@
 import json
 
+'''
+A test to work with VIM editor
+'''
+
 def loadData(file):
     return json.load(open("E:\\Documents\\Scripts\\Python Mega Course\\Application 1\\%s" % file))
 
