@@ -1,14 +1,17 @@
 import json
 from difflib import get_close_matches
 
+#Consolidates json.load method into my own function.
 def loadData(file):
     #Home File Location: "E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 1\\%s" % file
     #Work File Location: "U:\\Documents\\GitCode\\UdemyPython\\Application 1\\%s" % file
     return json.load(open("E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 1\\%s" % file))
 
+#Returns the value of the dictionary given the key
 def getDefinition(dictionary, word):
     return dictionary[word]
 
+#Main function mimicking the C/C++ format. Creating a main function is not actually necessary. 
 def main():
     
     print("\n\nWelcome to our dictionary! \nType in a word when prompted and the definition will be displayed on the screen!\n\n================================\nTo exit the program, enter \\end\n================================")
