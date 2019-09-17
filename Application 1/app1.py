@@ -26,7 +26,15 @@ def main():
             break
 
         elif usrInput in dictionary:
-            print(getDefinition(dictionary, usrInput))
+            
+            defList = (getDefinition(dictionary, usrInput))
+            
+            if type(defList) == list:
+                for i in defList:
+                    print(i)
+
+            else:
+                print(defList)
 
         elif len(get_close_matches(usrInput, dictionary.keys())) > 0:
 
