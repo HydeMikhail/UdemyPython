@@ -49,4 +49,4 @@ def main():
 
     print("\nThanks for using the dictionary!")
 
-main()
+main() 
