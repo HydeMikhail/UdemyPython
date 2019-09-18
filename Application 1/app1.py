@@ -5,14 +5,14 @@ from difflib import get_close_matches
 def loadData(file):
     #Home File Location: "E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 1\\%s" % file
     #Work File Location: "U:\\Documents\\GitCode\\UdemyPython\\Application 1\\%s" % file
-    return json.load(open("U:\\Documents\\GitCode\\UdemyPython\\Application 1\\%s" % file))
+    return json.load(open("E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 1\\%s" % file))
 
 def formatting(defList):
     if type(defList) == list:
         for i in defList:
-            print(i)
+            print("\n" + str(i) + "\n")
     else:
-        print(defList)
+        print("\n" + str(defList) + "\n")
 
 #Returns the value of the dictionary given the key
 def getDefinition(dictionary, word):
@@ -21,12 +21,26 @@ def getDefinition(dictionary, word):
 #Main function mimicking the C/C++ format. Creating a main function is not actually necessary. 
 def main():
     
-    print("\n\nWelcome to our dictionary! \nType in a word when prompted and the definition will be displayed on the screen!\n\n================================\nTo exit the program, enter \\end\n================================")
+    print('''
+==========================
+Welcome to our dictionary!
+==========================
+
+================================
+Enter a word in the command line
+and the program will return it's 
+definition to you. If your entry
+is misspelled the software will 
+suggest the closest match.
+    
+To exit the program, enter \\end
+================================
+''')
+
     dictionary = loadData("data.json")
 
     while True:
 
-        print("\n")
         usrInput = str(input("Enter word: ")).lower()
 
         if usrInput == "\\end":
@@ -49,6 +63,12 @@ def main():
             else:
                 print("Entry no recognized. Please try again.")
 
-    print("\nThanks for using the dictionary!")
+    print('''
+================================
+
+Thanks for using the dictionary!
+   
+================================
+    ''')
 
 main() 
