@@ -2,11 +2,12 @@ import os
 import pandas
 from geopy.geocoders import ArcGIS
 
-#dataFrame = pandas.DataFrame(pandas.read_csv("E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 2\\PandasCSV\\supermarkets.csv"))
-
 nom = ArcGIS()
-n = nom.geocode(input("Enter an address: "))
-coor = [n.latitude, n.longitude]
 
-print(coor)
+dataFrame = pandas.read_csv("U:\\Documents\\GitCode\\UdemyPython\\Application 2\\PandasCSV\\supermarkets.csv")
+dataFrame["Address"] = dataFrame["Address"] + ", " + dataFrame["City"] + ", " + dataFrame["State"] + ", " + dataFrame["Country"]
+dataFrame["Coordinates"] = dataFrame["Address"].apply(nom.geocode)
+dataFrame["Latitude"] = dataFrame["Coordinates"].apply(lambda x: x.latitude if x != None else None)
+dataFrame["Longitude"] = dataFrame["Coordinates"].apply(lambda x: x.longitude if x != None else None)
 
+print(dataFrame)
