@@ -1,4 +1,9 @@
-import numpy
+#!/usr/bin/env python
+'''
+DOCSTRING
+'''
 import cv2
 
-im_g = cv2.imread("U:\\Documents\\GitCode\\UdemyPython\\Application 2\\Imgs\\smallgray", 0)
+IMG = cv2.imread("Imgs\\smallgray", 0)
+
+print(IMG)
