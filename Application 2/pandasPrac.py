@@ -1,13 +1,22 @@
-import os
+#!/usr/bin/env python
+'''
+Udemy Python Class: Experimenting with Pandas
+'''
 import pandas
 from geopy.geocoders import ArcGIS
 
-nom = ArcGIS()
+NOM = ArcGIS()
 
-dataFrame = pandas.read_csv("U:\\Documents\\GitCode\\UdemyPython\\Application 2\\PandasCSV\\supermarkets.csv")
-dataFrame["Address"] = dataFrame["Address"] + ", " + dataFrame["City"] + ", " + dataFrame["State"] + ", " + dataFrame["Country"]
-dataFrame["Coordinates"] = dataFrame["Address"].apply(nom.geocode)
-dataFrame["Latitude"] = dataFrame["Coordinates"].apply(lambda x: x.latitude if x != None else None)
-dataFrame["Longitude"] = dataFrame["Coordinates"].apply(lambda x: x.longitude if x != None else None)
+F = "E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 2\\PandasCSV\\supermarkets.csv"
 
-print(dataFrame)
+DATAFRAME = pandas.read_csv \
+    (F)
+DATAFRAME["Address"] = DATAFRAME["Address"] + ", " + DATAFRAME["City"] + ", " + DATAFRAME["State"] + ", " + DATAFRAME["Country"]
+DATAFRAME["Coordinates"] = DATAFRAME["Address"].apply(NOM.geocode)
+DATAFRAME["Latitude"] = DATAFRAME["Coordinates"].apply(lambda x: x.latitude if x != None else None)
+DATAFRAME["Longitude"] = DATAFRAME["Coordinates"].apply(lambda x: x.longitude if x != None else None)
+
+print(DATAFRAME)
+
+#Work: U:\\Documents\\GitCode\\UdemyPython\\Application 2\\PandasCSV\\supermarkets.csv
+#Home: E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 2\\PandasCSV\\supermarkets.csv

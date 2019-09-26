@@ -3,7 +3,8 @@
 DOCSTRING
 '''
 import cv2
+import numpy
 
-IMG = cv2.imread("Imgs\\smallgray", 0)
+img = cv2.imread("E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 2\\Imgs\\smallgray.png", 0)
 
-print(IMG)
+print(img)
