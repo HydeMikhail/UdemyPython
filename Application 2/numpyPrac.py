@@ -5,6 +5,10 @@ DOCSTRING
 import cv2
 import numpy
 
+img = cv2.imread("E:\\Documents\\Scripts\\Udemy Classes\\UdemyPython\\Application 2\\Imgs\\smallgray.png", 0)
+
+print(img)
+
 img_g = cv2.imread("U:\\Documents\\GitCode\\UdemyPython\\Application 2\\Imgs\\smallgray.png", 0)
 img_c = cv2.imread("U:\\Documents\\GitCode\\UdemyPython\\Application 2\\Imgs\\smallgray.png", 1)
 
@@ -58,3 +62,4 @@ print(imsp_h)
 imsp_v = numpy.vsplit(imst_v, 3)
 print(imsp_v)
 '''
+
